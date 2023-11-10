@@ -8,6 +8,71 @@ package MainExamen;
  *
  * @author casti
  */
-public class Referencia {
+public class Referencia extends Libros{
+    
+    String tipo;
+
+    public Referencia() {
+        super();
+    }
+
+    public Referencia(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Referencia(String tipo, String Titulo, String Autor, double Precio, int Edicion) {
+        super(Titulo, Autor, Precio, Edicion);
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getTitulo() {
+        return Titulo;
+    }
+
+    public void setTitulo(String Titulo) {
+        this.Titulo = Titulo;
+    }
+
+    public String getAutor() {
+        return Autor;
+    }
+
+    public void setAutor(String Autor) {
+        this.Autor = Autor;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
+
+    public int getEdicion() {
+        return Edicion;
+    }
+
+    public void setEdicion(int Edicion) {
+        this.Edicion = Edicion;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "\n\tReferencia: " + "[Tipo: " + tipo + "]\n";
+    }
+    
+    
+    
+    
     
 }

@@ -8,6 +8,47 @@ package MainExamen;
  *
  * @author casti
  */
-public class Texto {
+public class Texto extends Libros{
+    int Curso;
+    String Facultad;
+
+    public Texto() {
+        super();
+    }
+
+    public Texto(int Curso, String Facultad) {
+        this.Curso = Curso;
+        this.Facultad = Facultad;
+    }
+
+    public Texto(int Curso, String Facultad, String Titulo, String Autor, double Precio, int Edicion) {
+        super(Titulo, Autor, Precio, Edicion);
+        this.Curso = Curso;
+        this.Facultad = Facultad;
+    }
+
+    
+    public int getCurso() {
+        return Curso;
+    }
+
+    public void setCurso(int Curso) {
+        this.Curso = Curso;
+    }
+
+    public String getFacultad() {
+        return Facultad;
+    }
+
+    public void setFacultad(String Facultad) {
+        this.Facultad = Facultad;
+    }
+
+    @Override
+    public String toString() {
+        return "\n\tTexto: " + "{Curso: " + Curso + " / Facultad: " + Facultad + "]\n";
+    }
+    
+    
     
 }
