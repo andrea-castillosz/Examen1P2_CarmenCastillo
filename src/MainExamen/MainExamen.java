@@ -640,6 +640,8 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel19.setForeground(new java.awt.Color(51, 51, 51));
         userLabel19.setText("Tipo:");
 
+        jcb_TipoDel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto", "Referencia", "Ficcion", "No Ficcion" }));
+
         userLabel20.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel20.setForeground(new java.awt.Color(51, 51, 51));
         userLabel20.setText("Libro");
@@ -1131,7 +1133,7 @@ public class MainExamen extends javax.swing.JFrame {
         String titulo = Jtxtf_TituloCrear.getText();
         String autor = Jtxtf_AutorCrear.getText();
         double precio = Double.parseDouble(jff_PrecioCrear.getText());
-        Object tipo = jcb_TipoRef.getSelectedItem();
+        Object tipo = jcb_TipoNoFicc.getSelectedItem();
 
         NoFiccion lib = new NoFiccion((String) tipo, titulo, autor, precio, 1);
         listaLibros.add(lib);
@@ -1182,7 +1184,7 @@ public class MainExamen extends javax.swing.JFrame {
         String titulo = Jtxtf_TituloCrear.getText();
         String autor = Jtxtf_AutorCrear.getText();
         double precio = Double.parseDouble(jff_PrecioCrear.getText());
-        Object tipo = jcb_TipoRef.getSelectedItem();
+        Object tipo = jcb_TipoFicc.getSelectedItem();
 
         Ficcion lib = new Ficcion((String) tipo, titulo, autor, precio, 1);
         listaLibros.add(lib);
@@ -1303,12 +1305,59 @@ public class MainExamen extends javax.swing.JFrame {
     private void ListarEdit() {
         txtA_ListTipos.setText("");
         String x = "";
-                x += "Titulo: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getTitulo() + "\n";
-                x += "Autor: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getAutor() + "\n";
-                x += "Edicion: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getEdicion()+ "\n";
-                x += "Precio: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getPrecio() + "Lps.\n";
-            
+
+        for (Libros lib : listaLibros) {
+            if (jcb_Mod.getSelectedItem().equals(lib)) {
+                x += "Titulo: " + lib.getTitulo() + "\n";
+                x += "Autor: " + lib.getAutor() + "\n";
+                x += "Edicion: " + lib.getEdicion()+ "\n";
+                x += "Precio: " + lib.getPrecio() + "Lps.\n";
+            }
+        }
+
         txtA_ListLibroMod.setText(x);
+
+    }
+
+    private void llenarcomboDelete() {
+        jcb_LibroDel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+        for (Libros lib : listaLibros) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) jcb_LibroDel.getModel();
+            if (jcb_TipoDel.getSelectedItem().equals("Texto")) {
+                if (lib instanceof Texto) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoDel.getSelectedItem().equals("Referencia")) {
+                if (lib instanceof Referencia) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoDel.getSelectedItem().equals("Ficcion")) {
+                if (lib instanceof Ficcion) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoDel.getSelectedItem().equals("No Ficcion")) {
+                if (lib instanceof NoFiccion) {
+                    modelo.addElement(lib);
+                }
+            }
+
+            jcb_LibroDel.setModel(modelo);
+        }
+    }
+
+    private void ListarDelete() {
+        txtA_ListTipos.setText("");
+        String x = "";
+        for (Libros lib : listaLibros) {
+            if (jcb_LibroDel.getSelectedItem().equals(lib)) {
+                x += "Titulo: " + lib.getTitulo() + "\n";
+                x += "Autor: " + lib.getAutor() + "\n";
+                x += "Edicion: " + lib.getEdicion()+ "\n";
+                x += "Precio: " + lib.getPrecio() + "Lps.\n";
+            }
+        }
+
+        txtA_ListDel.setText(x);
 
     }
 
