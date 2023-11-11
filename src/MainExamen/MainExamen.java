@@ -1238,13 +1238,26 @@ public class MainExamen extends javax.swing.JFrame {
         String tituloMod = Jtxtf_TituloMod.getText();
         String autorMod = Jtxtf_AutorMod.getText();
         double precioMod = Double.parseDouble(jff_PrecioMod.getText());
+        String x = "";
+        for (Libros lib : listaLibros) {
+            if (jcb_Mod.getSelectedItem().equals(lib)) {
+                lib.setTitulo(tituloMod);
+                lib.setAutor(autorMod);
+                lib.setPrecio(precioMod);
+                lib.setEdicion(lib.getEdicion()+ 1);
+            }
+        }
 
-        listaLibros.get(jcb_Mod.getSelectedIndex()).setTitulo(tituloMod);
-        listaLibros.get(jcb_Mod.getSelectedIndex()).setAutor(autorMod);
-        listaLibros.get(jcb_Mod.getSelectedIndex()).setPrecio(precioMod);
-        listaLibros.get(jcb_Mod.getSelectedIndex()).setPrecio(listaLibros.get(jcb_Mod.getSelectedIndex()).getPrecio() + 1);
+//        listaLibros.get(jcb_Mod.getSelectedIndex()).setTitulo(tituloMod);
+//        listaLibros.get(jcb_Mod.getSelectedIndex()).setAutor(autorMod);
+//        listaLibros.get(jcb_Mod.getSelectedIndex()).setPrecio(precioMod);
+//        listaLibros.get(jcb_Mod.getSelectedIndex()).setEdicion(listaLibros.get(jcb_Mod.getSelectedIndex()).getEdicion()+ 1);
 
-
+        Jtxtf_TituloMod.setText("");
+        Jtxtf_AutorMod.setText("");
+        jff_PrecioMod.setText("");
+        txtA_ListLibroMod.setText("");
+        
     }//GEN-LAST:event_btn_EditMouseClicked
 
     private void btn_ListarEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ListarEliminar1MouseClicked
@@ -1348,7 +1361,7 @@ public class MainExamen extends javax.swing.JFrame {
                 x += "Titulo: " + lib.getTitulo() + "\n";
                 x += "Autor: " + lib.getAutor() + "\n";
                 x += "Edicion: " + lib.getEdicion()+ "\n";
-                x += "Precio: " + lib.getPrecio() + "Lps.\n";
+                x += "Precio: " + lib.getPrecio() + " Lps.\n";
             }
         }
 
@@ -1390,7 +1403,7 @@ public class MainExamen extends javax.swing.JFrame {
                 x += "Titulo: " + lib.getTitulo() + "\n";
                 x += "Autor: " + lib.getAutor() + "\n";
                 x += "Edicion: " + lib.getEdicion()+ "\n";
-                x += "Precio: " + lib.getPrecio() + "Lps.\n";
+                x += "Precio: " + lib.getPrecio() + " Lps.\n";
             }
         }
 
