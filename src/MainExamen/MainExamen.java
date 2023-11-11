@@ -502,6 +502,8 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel14.setForeground(new java.awt.Color(51, 51, 51));
         userLabel14.setText("Tipo:");
 
+        jcb_TipoMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto", "Referencia", "Ficcion", "No Ficcion" }));
+
         userLabel15.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel15.setForeground(new java.awt.Color(51, 51, 51));
         userLabel15.setText("Libro");
@@ -1221,6 +1223,32 @@ public class MainExamen extends javax.swing.JFrame {
 
     }
 
+    private void llenarcombo() {
+        jcb_Mod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+        for (Libros lib : listaLibros) {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) jcb_Mod.getModel();
+            if (jcb_TipoMod.getSelectedItem().equals("Texto")) {
+                if (lib instanceof Texto) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoMod.getSelectedItem().equals("Referencia")) {
+                if (lib instanceof Texto) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoMod.getSelectedItem().equals("Ficcion")) {
+                if (lib instanceof Ficcion) {
+                    modelo.addElement(lib);
+                }
+            } else if (jcb_TipoMod.getSelectedItem().equals("No Ficcion")) {
+                if (lib instanceof Ficcion) {
+                    modelo.addElement(lib);
+                }
+            }
+
+            jcb_Mod.setModel(modelo);
+        }
+    }
+
 //    private void llenarcbTipoList() {
 //        jcb_TipoRef.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
 //        DefaultComboBoxModel modelo = (DefaultComboBoxModel) jcb_TipoRef.getModel();
@@ -1230,6 +1258,10 @@ public class MainExamen extends javax.swing.JFrame {
 //        modelo.addElement("Manual Tecnico");
 //        modelo.addElement("Tescuno");
 //        jcb_TipoRef.setModel(modelo);
+    //Texto
+//Referencia
+//Ficcion
+//No Ficcion
 //
 //    }
     /**
