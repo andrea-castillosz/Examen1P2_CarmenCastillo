@@ -97,6 +97,7 @@ public class MainExamen extends javax.swing.JFrame {
         txtA_ListDel = new javax.swing.JTextArea();
         btn_Delete = new javax.swing.JButton();
         tbn_CerrarSesionEliminar = new javax.swing.JButton();
+        btn_ListarEliminar = new javax.swing.JButton();
         jdPantallaUser = new javax.swing.JDialog();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -503,6 +504,17 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel14.setText("Tipo:");
 
         jcb_TipoMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto", "Referencia", "Ficcion", "No Ficcion" }));
+        jcb_TipoMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_TipoModActionPerformed(evt);
+            }
+        });
+
+        jcb_Mod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_ModActionPerformed(evt);
+            }
+        });
 
         userLabel15.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel15.setForeground(new java.awt.Color(51, 51, 51));
@@ -537,6 +549,11 @@ public class MainExamen extends javax.swing.JFrame {
         jff_PrecioMod.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
         btn_Edit.setText("Editar Libro");
+        btn_Edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_EditMouseClicked(evt);
+            }
+        });
 
         tbn_CerrarSesionEditar.setText("Cerrar Sesion");
         tbn_CerrarSesionEditar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -640,6 +657,8 @@ public class MainExamen extends javax.swing.JFrame {
             }
         });
 
+        btn_ListarEliminar.setText("Mostrar");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -661,6 +680,11 @@ public class MainExamen extends javax.swing.JFrame {
                 .addGap(109, 109, 109)
                 .addComponent(btn_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGap(371, 371, 371)
+                    .addComponent(btn_ListarEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(372, Short.MAX_VALUE)))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,12 +701,18 @@ public class MainExamen extends javax.swing.JFrame {
                             .addComponent(jcb_LibroDel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userLabel20))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)))
                 .addGap(23, 23, 23))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(tbn_CerrarSesionEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                    .addContainerGap(481, Short.MAX_VALUE)
+                    .addComponent(btn_ListarEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         jTabbedPane1.addTab("Eliminar Libro", jPanel8);
@@ -1140,7 +1170,6 @@ public class MainExamen extends javax.swing.JFrame {
 
         Referencia lib = new Referencia((String) tipo, titulo, autor, precio, 1);
         listaLibros.add(lib);
-        System.out.println(lib.getTipo());
         Jtxtf_TituloCrear.setText("");
         Jtxtf_AutorCrear.setText("");
         jff_PrecioCrear.setText("");
@@ -1168,6 +1197,28 @@ public class MainExamen extends javax.swing.JFrame {
     private void ListarLibMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarLibMouseClicked
         ListarTipo();
     }//GEN-LAST:event_ListarLibMouseClicked
+
+    private void jcb_TipoModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_TipoModActionPerformed
+        llenarcombo();
+    }//GEN-LAST:event_jcb_TipoModActionPerformed
+
+    private void jcb_ModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_ModActionPerformed
+        ListarEdit();
+    }//GEN-LAST:event_jcb_ModActionPerformed
+
+    private void btn_EditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EditMouseClicked
+
+        String tituloMod = Jtxtf_TituloMod.getText();
+        String autorMod = Jtxtf_AutorMod.getText();
+        double precioMod = Double.parseDouble(jff_PrecioMod.getText());
+
+        listaLibros.get(jcb_Mod.getSelectedIndex()).setTitulo(tituloMod);
+        listaLibros.get(jcb_Mod.getSelectedIndex()).setAutor(autorMod);
+        listaLibros.get(jcb_Mod.getSelectedIndex()).setPrecio(precioMod);
+        listaLibros.get(jcb_Mod.getSelectedIndex()).setPrecio(listaLibros.get(jcb_Mod.getSelectedIndex()).getPrecio() + 1);
+
+
+    }//GEN-LAST:event_btn_EditMouseClicked
 
     private void ListarTipo() {
         txtA_ListTipos.setText("");
@@ -1232,7 +1283,7 @@ public class MainExamen extends javax.swing.JFrame {
                     modelo.addElement(lib);
                 }
             } else if (jcb_TipoMod.getSelectedItem().equals("Referencia")) {
-                if (lib instanceof Texto) {
+                if (lib instanceof Referencia) {
                     modelo.addElement(lib);
                 }
             } else if (jcb_TipoMod.getSelectedItem().equals("Ficcion")) {
@@ -1240,13 +1291,25 @@ public class MainExamen extends javax.swing.JFrame {
                     modelo.addElement(lib);
                 }
             } else if (jcb_TipoMod.getSelectedItem().equals("No Ficcion")) {
-                if (lib instanceof Ficcion) {
+                if (lib instanceof NoFiccion) {
                     modelo.addElement(lib);
                 }
             }
 
             jcb_Mod.setModel(modelo);
         }
+    }
+
+    private void ListarEdit() {
+        txtA_ListTipos.setText("");
+        String x = "";
+                x += "Titulo: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getTitulo() + "\n";
+                x += "Autor: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getAutor() + "\n";
+                x += "Edicion: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getEdicion()+ "\n";
+                x += "Precio: " + listaLibros.get(jcb_Mod.getSelectedIndex()).getPrecio() + "Lps.\n";
+            
+        txtA_ListLibroMod.setText(x);
+
     }
 
 //    private void llenarcbTipoList() {
@@ -1312,6 +1375,7 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JButton btn_Delete;
     private javax.swing.JButton btn_Devolver;
     private javax.swing.JButton btn_Edit;
+    private javax.swing.JButton btn_ListarEliminar;
     private javax.swing.JButton btn_LogAdmin;
     private javax.swing.JButton btn_LogUser;
     private javax.swing.JButton btn_PublicarFicc;
