@@ -5,6 +5,7 @@
 package MainExamen;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +46,7 @@ public class MainExamen extends javax.swing.JFrame {
         Jtxtf_AutorCrear = new javax.swing.JTextField();
         userLabel7 = new javax.swing.JLabel();
         jff_PrecioCrear = new javax.swing.JFormattedTextField();
+        tbn_CerrarSesionPublicar = new javax.swing.JButton();
         btn_PublicarNoFicc = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         userLabel8 = new javax.swing.JLabel();
@@ -69,6 +71,8 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtA_ListTipos = new javax.swing.JTextArea();
+        tbn_CerrarSesionListar = new javax.swing.JButton();
+        ListarLib = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         userLabel14 = new javax.swing.JLabel();
         jcb_TipoMod = new javax.swing.JComboBox<>();
@@ -83,6 +87,7 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel18 = new javax.swing.JLabel();
         jff_PrecioMod = new javax.swing.JFormattedTextField();
         btn_Edit = new javax.swing.JButton();
+        tbn_CerrarSesionEditar = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         userLabel19 = new javax.swing.JLabel();
         jcb_TipoDel = new javax.swing.JComboBox<>();
@@ -91,6 +96,7 @@ public class MainExamen extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtA_ListDel = new javax.swing.JTextArea();
         btn_Delete = new javax.swing.JButton();
+        tbn_CerrarSesionEliminar = new javax.swing.JButton();
         jdPantallaUser = new javax.swing.JDialog();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -106,6 +112,7 @@ public class MainExamen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_Comprar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        tbn_CerrarSesionComprar = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         txtArea_Devolver = new javax.swing.JTextArea();
@@ -118,6 +125,7 @@ public class MainExamen extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btn_Devolver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        tbn_CerrarSesionDevolver = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         userLabel3 = new javax.swing.JLabel();
@@ -161,31 +169,45 @@ public class MainExamen extends javax.swing.JFrame {
         jff_PrecioCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jff_PrecioCrear.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
+        tbn_CerrarSesionPublicar.setText("Cerrar Sesion");
+        tbn_CerrarSesionPublicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionPublicarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(userLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(Jtxtf_TituloCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(174, 174, 174)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(userLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(Jtxtf_TituloCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(userLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jff_PrecioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(userLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(Jtxtf_AutorCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(userLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jff_PrecioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(userLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(Jtxtf_AutorCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(23, 23, 23)
+                        .addComponent(tbn_CerrarSesionPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(tbn_CerrarSesionPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userLabel5)
                     .addComponent(Jtxtf_TituloCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -208,7 +230,7 @@ public class MainExamen extends javax.swing.JFrame {
 
         jff_CursoCrear.setBackground(new java.awt.Color(255, 255, 255));
         jff_CursoCrear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jff_CursoCrear.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        jff_CursoCrear.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
         Jtxtf_FacultadCrear.setBackground(new java.awt.Color(255, 255, 255));
         Jtxtf_FacultadCrear.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -219,6 +241,11 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel9.setText("Facultad:");
 
         btn_PublicarText.setText("Publicar Libro");
+        btn_PublicarText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PublicarTextMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -266,9 +293,14 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel10.setForeground(new java.awt.Color(51, 51, 51));
         userLabel10.setText("Tipo:");
 
-        jcb_TipoRef.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_TipoRef.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diccionario", "Enciclopedia", "Manual Tecnico", "Tescuno" }));
 
         btn_PublicarRef.setText("Publicar Libro");
+        btn_PublicarRef.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PublicarRefMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -305,9 +337,14 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel11.setForeground(new java.awt.Color(51, 51, 51));
         userLabel11.setText("Tipo:");
 
-        jcb_TipoFicc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_TipoFicc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Novela", "Sci-fi", "Misterio", "Aventura" }));
 
         btn_PublicarFicc.setText("Publicar Libro");
+        btn_PublicarFicc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PublicarFiccMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -344,9 +381,14 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel12.setForeground(new java.awt.Color(51, 51, 51));
         userLabel12.setText("Tipo:");
 
-        jcb_TipoNoFicc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_TipoNoFicc.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ensayo", "Biografia", "Autobiografia", "Revista Cientifica" }));
 
         btn_PublicarFiccNo.setText("Publicar Libro");
+        btn_PublicarFiccNo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_PublicarFiccNoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -396,7 +438,7 @@ public class MainExamen extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(153, 153, 153));
 
-        jcb_TipoListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_TipoListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Libros de Texto", "Libros de Referencias", "Libros de Ficcion", "Libros de No Ficcion" }));
 
         userLabel13.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel13.setForeground(new java.awt.Color(51, 51, 51));
@@ -406,19 +448,36 @@ public class MainExamen extends javax.swing.JFrame {
         txtA_ListTipos.setRows(5);
         jScrollPane1.setViewportView(txtA_ListTipos);
 
+        tbn_CerrarSesionListar.setText("Cerrar Sesion");
+        tbn_CerrarSesionListar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionListarMouseClicked(evt);
+            }
+        });
+
+        ListarLib.setText("Listar");
+        ListarLib.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListarLibMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(userLabel13)
-                .addGap(31, 31, 31)
-                .addComponent(jcb_TipoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(tbn_CerrarSesionListar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(userLabel13)
+                        .addGap(31, 31, 31)
+                        .addComponent(jcb_TipoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ListarLib, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -427,7 +486,9 @@ public class MainExamen extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb_TipoListar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userLabel13))
+                    .addComponent(userLabel13)
+                    .addComponent(tbn_CerrarSesionListar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ListarLib, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -440,10 +501,6 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel14.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel14.setForeground(new java.awt.Color(51, 51, 51));
         userLabel14.setText("Tipo:");
-
-        jcb_TipoMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jcb_Mod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         userLabel15.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel15.setForeground(new java.awt.Color(51, 51, 51));
@@ -479,6 +536,13 @@ public class MainExamen extends javax.swing.JFrame {
 
         btn_Edit.setText("Editar Libro");
 
+        tbn_CerrarSesionEditar.setText("Cerrar Sesion");
+        tbn_CerrarSesionEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionEditarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -511,7 +575,8 @@ public class MainExamen extends javax.swing.JFrame {
                             .addComponent(userLabel16)
                             .addGap(18, 18, 18)
                             .addComponent(Jtxtf_TituloMod, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_Edit, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tbn_CerrarSesionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67))
         );
         jPanel7Layout.setVerticalGroup(
@@ -520,7 +585,8 @@ public class MainExamen extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb_TipoMod, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userLabel14))
+                    .addComponent(userLabel14)
+                    .addComponent(tbn_CerrarSesionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb_Mod, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -555,13 +621,9 @@ public class MainExamen extends javax.swing.JFrame {
         userLabel19.setForeground(new java.awt.Color(51, 51, 51));
         userLabel19.setText("Tipo:");
 
-        jcb_TipoDel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         userLabel20.setFont(new java.awt.Font("Roboto Light", 1, 16)); // NOI18N
         userLabel20.setForeground(new java.awt.Color(51, 51, 51));
         userLabel20.setText("Libro");
-
-        jcb_LibroDel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         txtA_ListDel.setColumns(20);
         txtA_ListDel.setRows(5);
@@ -569,22 +631,31 @@ public class MainExamen extends javax.swing.JFrame {
 
         btn_Delete.setText("Eliminar Libro");
 
+        tbn_CerrarSesionEliminar.setText("Cerrar Sesion");
+        tbn_CerrarSesionEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionEliminarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(250, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(userLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jcb_TipoDel, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(userLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jcb_LibroDel, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(tbn_CerrarSesionEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addComponent(userLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jcb_TipoDel, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(109, 109, 109)
                 .addComponent(btn_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
@@ -606,6 +677,10 @@ public class MainExamen extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(tbn_CerrarSesionEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Eliminar Libro", jPanel8);
@@ -655,6 +730,13 @@ public class MainExamen extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Transacción");
 
+        tbn_CerrarSesionComprar.setText("Cerrar Sesion");
+        tbn_CerrarSesionComprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionComprarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -676,12 +758,14 @@ public class MainExamen extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_Comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tbn_CerrarSesionComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_Comprar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(21, 21, 21))))
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
@@ -692,7 +776,9 @@ public class MainExamen extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(tbn_CerrarSesionComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb_TipoComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userLabel21))
@@ -752,6 +838,13 @@ public class MainExamen extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Saldo del Usuario:");
 
+        tbn_CerrarSesionDevolver.setText("Cerrar Sesion");
+        tbn_CerrarSesionDevolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbn_CerrarSesionDevolverMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -773,12 +866,14 @@ public class MainExamen extends javax.swing.JFrame {
                                 .addComponent(jcb_LibroDev, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(74, 74, 74))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_Devolver, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tbn_CerrarSesionDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_Devolver, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(19, 19, 19))))
             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
@@ -791,7 +886,9 @@ public class MainExamen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                        .addGap(19, 19, 19)
+                        .addComponent(tbn_CerrarSesionDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jcb_TipoDev, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userLabel23))
@@ -938,6 +1035,7 @@ public class MainExamen extends javax.swing.JFrame {
             jdPantallaAdmin.pack();
             jdPantallaAdmin.setLocationRelativeTo(null);
             jdPantallaAdmin.setVisible(true);
+            //llenarcbTipoList();
 
         } else {
 
@@ -948,14 +1046,192 @@ public class MainExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_LogAdminMouseClicked
 
     private void btn_LogUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LogUserMouseClicked
-
         this.setVisible(false);
         jdPantallaUser.pack();
         jdPantallaUser.setLocationRelativeTo(null);
         jdPantallaUser.setVisible(true);
-
     }//GEN-LAST:event_btn_LogUserMouseClicked
 
+    private void tbn_CerrarSesionPublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionPublicarMouseClicked
+        jdPantallaAdmin.pack();
+        jdPantallaAdmin.setLocationRelativeTo(null);
+        jdPantallaAdmin.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionPublicarMouseClicked
+
+    private void tbn_CerrarSesionListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionListarMouseClicked
+        jdPantallaAdmin.pack();
+        jdPantallaAdmin.setLocationRelativeTo(null);
+        jdPantallaAdmin.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionListarMouseClicked
+
+    private void tbn_CerrarSesionEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionEditarMouseClicked
+        jdPantallaAdmin.pack();
+        jdPantallaAdmin.setLocationRelativeTo(null);
+        jdPantallaAdmin.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionEditarMouseClicked
+
+    private void tbn_CerrarSesionEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionEliminarMouseClicked
+        jdPantallaAdmin.pack();
+        jdPantallaAdmin.setLocationRelativeTo(null);
+        jdPantallaAdmin.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionEliminarMouseClicked
+
+    private void tbn_CerrarSesionComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionComprarMouseClicked
+        jdPantallaUser.pack();
+        jdPantallaUser.setLocationRelativeTo(null);
+        jdPantallaUser.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionComprarMouseClicked
+
+    private void tbn_CerrarSesionDevolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbn_CerrarSesionDevolverMouseClicked
+        jdPantallaUser.pack();
+        jdPantallaUser.setLocationRelativeTo(null);
+        jdPantallaUser.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_tbn_CerrarSesionDevolverMouseClicked
+
+    private void btn_PublicarFiccNoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PublicarFiccNoMouseClicked
+
+        String titulo = Jtxtf_TituloCrear.getText();
+        String autor = Jtxtf_AutorCrear.getText();
+        double precio = Double.parseDouble(jff_PrecioCrear.getText());
+        Object tipo = jcb_TipoRef.getSelectedItem();
+
+        NoFiccion lib = new NoFiccion((String) tipo, titulo, autor, precio, 1);
+        listaLibros.add(lib);
+
+        Jtxtf_TituloCrear.setText("");
+        Jtxtf_AutorCrear.setText("");
+        jff_PrecioCrear.setText("");
+        JOptionPane.showMessageDialog(this, "Libro publicado exitosamente.");
+
+    }//GEN-LAST:event_btn_PublicarFiccNoMouseClicked
+
+    private void btn_PublicarTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PublicarTextMouseClicked
+        String titulo = Jtxtf_TituloCrear.getText();
+        String autor = Jtxtf_AutorCrear.getText();
+        double precio = Double.parseDouble(jff_PrecioCrear.getText());
+        int curso = Integer.parseInt(jff_CursoCrear.getText());
+        String facu = Jtxtf_FacultadCrear.getText();
+
+        Texto lib = new Texto(curso, facu, titulo, autor, precio, 1);
+        listaLibros.add(lib);
+
+        Jtxtf_TituloCrear.setText("");
+        Jtxtf_AutorCrear.setText("");
+        jff_PrecioCrear.setText("");
+        jff_CursoCrear.setText("");
+        Jtxtf_FacultadCrear.setText("");
+        JOptionPane.showMessageDialog(this, "Libro publicado exitosamente.");
+    }//GEN-LAST:event_btn_PublicarTextMouseClicked
+
+    private void btn_PublicarRefMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PublicarRefMouseClicked
+
+        String titulo = Jtxtf_TituloCrear.getText();
+        String autor = Jtxtf_AutorCrear.getText();
+        double precio = Double.parseDouble(jff_PrecioCrear.getText());
+        Object tipo = jcb_TipoRef.getSelectedItem();
+
+        Referencia lib = new Referencia((String) tipo, titulo, autor, precio, 1);
+        listaLibros.add(lib);
+        System.out.println(lib.getTipo());
+        Jtxtf_TituloCrear.setText("");
+        Jtxtf_AutorCrear.setText("");
+        jff_PrecioCrear.setText("");
+        JOptionPane.showMessageDialog(this, "Libro publicado exitosamente.");
+
+    }//GEN-LAST:event_btn_PublicarRefMouseClicked
+
+    private void btn_PublicarFiccMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_PublicarFiccMouseClicked
+
+        String titulo = Jtxtf_TituloCrear.getText();
+        String autor = Jtxtf_AutorCrear.getText();
+        double precio = Double.parseDouble(jff_PrecioCrear.getText());
+        Object tipo = jcb_TipoRef.getSelectedItem();
+
+        Ficcion lib = new Ficcion((String) tipo, titulo, autor, precio, 1);
+        listaLibros.add(lib);
+
+        Jtxtf_TituloCrear.setText("");
+        Jtxtf_AutorCrear.setText("");
+        jff_PrecioCrear.setText("");
+        JOptionPane.showMessageDialog(this, "Libro publicado exitosamente.");
+
+    }//GEN-LAST:event_btn_PublicarFiccMouseClicked
+
+    private void ListarLibMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarLibMouseClicked
+        ListarTipo();
+    }//GEN-LAST:event_ListarLibMouseClicked
+
+    private void ListarTipo() {
+        txtA_ListTipos.setText("");
+        if (jcb_TipoListar.getSelectedItem().equals("Todos")) {
+            String x = "";
+            for (Libros lib : listaLibros) {
+                x += lib.toString();
+                x += "\n\t";
+            }
+            txtA_ListTipos.setText(x);
+        } else if (jcb_TipoListar.getSelectedItem().equals("Libros de Texto")) {
+
+            String x = "";
+            for (Libros lib : listaLibros) {
+                if (lib instanceof Texto) {
+                    x += lib.toString();
+                    x += "\n\t";
+                }
+            }
+            txtA_ListTipos.setText(x);
+
+        } else if (jcb_TipoListar.getSelectedItem().equals("Libros de Referencias")) {
+            String x = "";
+            for (Libros lib : listaLibros) {
+                if (lib instanceof Referencia) {
+                    x += lib.toString();
+                    x += "\n\t";
+                }
+            }
+            txtA_ListTipos.setText(x);
+
+        } else if (jcb_TipoListar.getSelectedItem().equals("Libros de Ficcion")) {
+            String x = "";
+            for (Libros lib : listaLibros) {
+                if (lib instanceof Ficcion) {
+                    x += lib.toString();
+                    x += "\n\t";
+                }
+            }
+            txtA_ListTipos.setText(x);
+
+        } else if (jcb_TipoListar.getSelectedItem().equals("Libros de No Ficcion")) {
+            String x = "";
+            for (Libros lib : listaLibros) {
+                if (lib instanceof NoFiccion) {
+                    x += lib.toString();
+                    x += "\n\t";
+                }
+            }
+            txtA_ListTipos.setText(x);
+
+        }
+
+    }
+
+//    private void llenarcbTipoList() {
+//        jcb_TipoRef.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+//        DefaultComboBoxModel modelo = (DefaultComboBoxModel) jcb_TipoRef.getModel();
+//        modelo.removeAllElements();
+//        modelo.addElement("Diccionario");
+//        modelo.addElement("Enciclopedia");
+//        modelo.addElement("Manual Tecnico");
+//        modelo.addElement("Tescuno");
+//        jcb_TipoRef.setModel(modelo);
+//
+//    }
     /**
      * @param args the command line arguments
      */
@@ -999,6 +1275,7 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JTextField Jtxtf_TituloCrear;
     private javax.swing.JTextField Jtxtf_TituloMod;
     private javax.swing.JTextField Jtxtf_UserAdmin;
+    private javax.swing.JButton ListarLib;
     private javax.swing.JButton btn_Comprar;
     private javax.swing.JButton btn_Delete;
     private javax.swing.JButton btn_Devolver;
@@ -1055,6 +1332,12 @@ public class MainExamen extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jff_CursoCrear;
     private javax.swing.JFormattedTextField jff_PrecioCrear;
     private javax.swing.JFormattedTextField jff_PrecioMod;
+    private javax.swing.JButton tbn_CerrarSesionComprar;
+    private javax.swing.JButton tbn_CerrarSesionDevolver;
+    private javax.swing.JButton tbn_CerrarSesionEditar;
+    private javax.swing.JButton tbn_CerrarSesionEliminar;
+    private javax.swing.JButton tbn_CerrarSesionListar;
+    private javax.swing.JButton tbn_CerrarSesionPublicar;
     private javax.swing.JLabel title;
     private javax.swing.JTextArea txtA_ListDel;
     private javax.swing.JTextArea txtA_ListLibroMod;
